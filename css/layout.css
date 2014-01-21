@@ -1,0 +1,132 @@
+/*
+    The layout is redrawn based on viewport. Large screens have a two-column layout:
+
+      1. A fixed sidebar, a cover.
+      2. A scrolling mianbar for content.
+
+    On smaller viewports, starting at 1000 pixels and lower, the layout changes to a scrolling column.
+
+    There are two types of covers:
+
+      1. A full cover, which spreads from the top to the bottom;
+      2. A split cover, which has a content space for images or forms.
+
+    The split cover houses the user bio, inside .cover-description, and the user cover image above the bio.
+    The full cover has a .cover-description that is vertically centered on all but the largest view port, where it's fixed to the bottom.
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+/* Stretch these elements to occupy full height of the screen. */
+html,
+body,
+.wrapper {
+  height: 100%;
+}
+
+/* Stretch .cover-content to occupy full height and width of its parent, .cover.
+ * .cover styles are viewport dependent and are found in their viewport section. */
+.cover-content {
+  height: 100%;
+  width: 100%;
+}
+
+/* The .cover-space only appears inside .cover-split. We can style it freely.
+   It's height is viewport dependent, found in its respective viewport section. */
+.cover-split .cover-space {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+/* A .cover-description nested in .cover-split should have a white background for legability;
+ * this section has the users bio */
+.cover-split .user-details {
+  background-color: #fff;
+  box-shadow: inset 0 1px 0 rgba(0,0,0,.4);
+}
+
+/* A .cover-description nested in .cover-full should have white text for legability;
+ * the text is overlayed on a photo background. */
+.cover-full .cover-description {
+  color: #fff;
+}
+
+/* The .avatar class is the same across all viewports */
+.cover-split .user-details .avatar {
+  position: relative;
+  top: -50px;
+}
+
+.cover-image {
+  background: #666 url(https://dnqgz544uhbo8.cloudfront.net/_/fp/img/home/08.6JOuxLGkR2gZ3irucSGysQ.jpg) center no-repeat scroll;
+  background-size: cover;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+/* This overlays a gradient on the full cover to make text more legible. */
+.bg-filter {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.8) 100%);
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.8) 100%);
+  background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.8) 100%);
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.8) 100%);
+  background-image: linear-gradient(top, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.8) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00000000, endColorstr=#CC000000);
+}
+
+/* The image form should overlay the existing cover image. */
+.cover-image-form {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+/* We want to vertically center the upload photo button.  */
+.display-table {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+/* We want to vertically center the upload photo button.  */
+.display-table-cell {
+  display: table-cell;
+  height: 100%;
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Styling for illustration purposes only
+ * Delete when done.
+ */
+
+.cover {
+  background-color: #eee;
+}
+
+.content {
+  background-color: #f8f8f8;
+  min-height: 1000px;
+}
+
+.cover-description, .user-details {
+  text-align: center;
+}
+
+.cover-description h1, .user-details h1 {
+  font-size: 36px;
+}
+
+.cover-description p, .user-details p {
+  font-size: 18px;
+  margin: 10px 0 20px;
+}

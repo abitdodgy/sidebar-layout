@@ -1,0 +1,30 @@
+/*
+ *  Medium screens
+ */
+@media(min-width: 501px) and (max-width: 1000px) {
+  .cover-full {
+    border-bottom: 1px solid rgba(0,0,0,.3);
+    height: 500px;
+    position: relative;
+  }
+
+  .cover-full .cover-description {
+    height: 100%;
+    padding: 0 10% 20px;
+    position: relative;
+  }
+
+  .cover-split .cover-space {
+    height: 350px;
+    position: relative;
+  }
+
+  .cover-split .user-details {
+    padding: 0 10% 20px;
+    position: relative;
+  }
+
+  .page-content {
+    padding: 40px 10%;
+  }
+}

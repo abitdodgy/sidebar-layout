@@ -1,0 +1,53 @@
+/*
+ *  Large screens
+ */
+@media(min-width: 1001px) {
+  html, body {
+    overflow: hidden;
+  }
+
+  .cover-full,
+  .cover-split {
+    box-shadow: 1px 0 0 rgba(0,0,0,.3);
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 30%;
+  }
+
+  .cover-full .cover-description {
+    bottom: 0;
+    height: 30%;
+    padding: 0 5%;
+    position: absolute;
+    width: 100%;
+  }
+
+  .cover-split .cover-space {
+    height: 70%;
+  }
+
+  .cover-split .user-details {
+    bottom: 0;
+    max-height: 40%;
+    min-height: 30%;
+    padding: 0 5% 40px;
+    position: absolute;
+    width: 100%;
+  }
+
+  .page {
+    height: 100%;
+    overflow: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 70%;
+  }
+
+  .page-content {
+    max-width: 810px;
+    padding: 50px 85px;
+  }
+}
